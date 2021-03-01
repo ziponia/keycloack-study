@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  auth-server-example:
+    container_name: auth-server-example
+    image: quay.io/keycloak/keycloak:12.0.4
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 9001:8080
