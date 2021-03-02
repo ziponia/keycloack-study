@@ -1,11 +1,33 @@
 version: "3.3"
 
 services:
+  auth-server-db:
+    container_name: auth-server-db
+    image: mysql
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASS}"
+    ports:
+      - 4406:3306
+
   auth-server-example:
     container_name: auth-server-example
-    image: quay.io/keycloak/keycloak:12.0.4
+    image: quay.io/keycloak/keycloak:latest
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      DB_VENDOR: mysql
+      DB_ADDR: auth-server-db
+      DB_DATABASE: "${DB_DATABASE}"
+      DB_USER: "${DB_USER}"
+      DB_PASSWORD: "${DB_PASS}"
     ports:
       - 9001:8080
+    depends_on:
+      - auth-server-db
+    links:
+      - auth-server-db
