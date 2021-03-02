@@ -1,5 +1,5 @@
 keycloak:
   auth-server-url: http://localhost:9001/auth
-  realm: AuthServer
-  resource: login-app
+  realm: Authserver
+  resource: myclient
   public-client: true
