@@ -16,4 +16,9 @@ public class SecureController {
         return authentication.getName() + " - " + authentication.getAuthorities();
 
     }
+
+    @GetMapping(value = "/user")
+    public Object user(Authentication authentication) {
+        return authentication;
+    }
 }

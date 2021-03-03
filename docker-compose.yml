@@ -18,6 +18,7 @@ services:
     container_name: auth-server-example
     image: quay.io/keycloak/keycloak:latest
     environment:
+      DEBUG: "true"
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
       DB_VENDOR: mysql

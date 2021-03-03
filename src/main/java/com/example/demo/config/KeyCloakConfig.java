@@ -1,3 +1,4 @@
+/*
 package com.example.demo.config;
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
@@ -48,3 +49,4 @@ public class KeyCloakConfig extends KeycloakWebSecurityConfigurerAdapter {
                 .anyRequest().permitAll();
     }
 }
+*/

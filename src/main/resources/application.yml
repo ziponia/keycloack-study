@@ -3,3 +3,11 @@ keycloak:
   realm: Authserver
   resource: myclient
   public-client: true
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9001/auth/realms/authserver
+          jwk-set-uri: http://localhost:9001/auth/realms/authserver/protocol/openid-connect/certs

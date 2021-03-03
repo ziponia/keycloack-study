@@ -26,6 +26,7 @@ dependencies {
 
     implementation "org.springframework.boot:spring-boot-starter-security"
     implementation "org.keycloak:keycloak-spring-boot-starter:12.0.3"
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-resource-server"
 }
 
 test {
